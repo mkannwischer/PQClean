@@ -8,7 +8,7 @@ consistency_checks:
     - indcpa.h
     - params.h
     - polyvec.h
-    - symmetric-fips202.c
+    - symmetric-shake.c
     - verify.h
 - source:
     scheme: kyber768

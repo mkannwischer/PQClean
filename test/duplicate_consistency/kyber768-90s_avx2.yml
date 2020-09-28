@@ -13,7 +13,6 @@ consistency_checks:
     scheme: kyber512
     implementation: avx2
   files:
-    - cbd.c
     - cbd.h
     - consts.c
     - consts.h
@@ -48,7 +47,6 @@ consistency_checks:
   files:
     - aes256ctr.c
     - aes256ctr.h
-    - cbd.c
     - cbd.h
     - consts.c
     - consts.h

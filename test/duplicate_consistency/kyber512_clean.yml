@@ -4,7 +4,6 @@ consistency_checks:
     implementation: clean
   files:
     - LICENSE
-    - cbd.c
     - cbd.h
     - indcpa.h
     - kem.c
@@ -14,7 +13,7 @@ consistency_checks:
     - polyvec.h
     - reduce.c
     - reduce.h
-    - symmetric-fips202.c
+    - symmetric-shake.c
     - symmetric.h
     - verify.c
     - verify.h

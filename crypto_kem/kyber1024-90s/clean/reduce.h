@@ -2,14 +2,18 @@
 #define REDUCE_H
 
 #include <stdint.h>
+#include "params.h"
 
-#define MONT 2285 // 2^16 % Q
-#define QINV 62209 // q^(-1) mod 2^16
+#define MONT 2285 // 2^16 mod q
+#define QINV 62209 // q^-1 mod 2^16
 
-int16_t PQCLEAN_KYBER102490S_CLEAN_montgomery_reduce(int32_t a);
+#define montgomery_reduce KYBER_NAMESPACE(_montgomery_reduce)
+int16_t montgomery_reduce(int32_t a);
 
-int16_t PQCLEAN_KYBER102490S_CLEAN_barrett_reduce(int16_t a);
+#define barrett_reduce KYBER_NAMESPACE(_barrett_reduce)
+int16_t barrett_reduce(int16_t a);
 
-int16_t PQCLEAN_KYBER102490S_CLEAN_csubq(int16_t a);
+#define csubq KYBER_NAMESPACE(_csubq)
+int16_t csubq(int16_t x);
 
 #endif

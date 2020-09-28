@@ -8,11 +8,13 @@ consistency_checks:
     - indcpa.h
     - params.h
     - polyvec.h
+    - kem.h
     - verify.h
 - source:
     scheme: kyber768
     implementation: avx2
   files:
+    - kem.h
     - cbd.c
     - cbd.h
     - consts.c
@@ -36,6 +38,7 @@ consistency_checks:
     implementation: clean
   files:
     - LICENSE
+    - kem.h
     - cbd.h
     - indcpa.h
     - params.h
@@ -45,6 +48,7 @@ consistency_checks:
     scheme: kyber768-90s
     implementation: avx2
   files:
+    - kem.h
     - aes256ctr.c
     - aes256ctr.h
     - cbd.c

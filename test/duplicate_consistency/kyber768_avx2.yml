@@ -8,13 +8,12 @@ consistency_checks:
     - indcpa.h
     - params.h
     - polyvec.h
-    - symmetric-fips202.c
+    - symmetric-shake.c
     - verify.h
 - source:
     scheme: kyber512
     implementation: avx2
   files:
-    - cbd.c
     - cbd.h
     - consts.c
     - consts.h
@@ -33,7 +32,7 @@ consistency_checks:
     - rejsample.h
     - shuffle.inc
     - shuffle.s
-    - symmetric-fips202.c
+    - symmetric-shake.c
     - symmetric.h
     - verify.c
     - verify.h
