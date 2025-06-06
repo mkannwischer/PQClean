@@ -106,6 +106,7 @@ void KeccakF1600_StatePermutex2(v128 state[25]) {
     #if (__APPLE__ && __ARM_FEATURE_CRYPTO) || (__ARM_FEATURE_SHA3) /* although not sure what is being implemented, we find something fast */
     f1600x2(state, neon_KeccakF_RoundConstants);
     #else
+    #error
     v128 Aba, Abe, Abi, Abo, Abu;
     v128 Aga, Age, Agi, Ago, Agu;
     v128 Aka, Ake, Aki, Ako, Aku;

@@ -5,7 +5,7 @@ HEADERS=api.h macros_common.inc macros.inc NTT_params.h ntt.h packing.h params.h
 OBJECTS= ntt.o packing.o poly.o polyvec.o reduce.o rounding.o sign.o symmetric-shake.o __asm_iNTT.o __asm_NTT.o __asm_poly.o
 
 
-CFLAGS=-O3 -Wall -Wextra -Wpedantic -Werror -Wmissing-prototypes -Wredundant-decls -std=c99 -I../../../common $(EXTRAFLAGS) -g
+CFLAGS=-O3 -Wall -Wextra -Wpedantic -Werror -Wmissing-prototypes -Wredundant-decls -std=c99 -I../../../common $(EXTRAFLAGS) -DMAC_CYCLES
 
 KECCAK2XDIR=../../../common/keccak2x
 KECCAK2XOBJ=fips202x2.o feat.o
@@ -25,6 +25,12 @@ $(LIB): $(OBJECTS) $(KECCAK2X)
 $(KECCAK2X):
 	$(MAKE) -C $(KECCAK2XDIR) CFLAGS="$(CFLAGS)" $(KECCAK2XOBJ)
 
+SHARED=../../../common/fips202.c ../../../test/common/notrandombytes.c hal.c
+bench: $(LIB) bench.c
+	$(CC) $(CFLAGS) bench.c $(SHARED) $(LIB) -o $@
+
 clean:
 	$(RM) $(OBJECTS)
 	$(RM) $(LIB)
+	$(RM) bench
+
